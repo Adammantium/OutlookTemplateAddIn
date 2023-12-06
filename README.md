@@ -38,3 +38,5 @@ A folder structure like this will result in two tabs named `Dev` and `Online`.
 ## Is it compatible with GPO?
 Yes, just copy the folder structure to your users home folder and it will automatically load all the required data.  
 Because its in the AppData folder, it will make sure that users will have the templates available even when offline or not connected to a central storage server.
+### Silent Install
+`"C:\Program Files\Common Files\microsoft shared\VSTO\10.0\VSTOInstaller.exe" /install OutlookTemplateAddIn.vsto /silent`
