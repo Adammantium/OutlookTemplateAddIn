@@ -45,8 +45,8 @@ As it's a self signed certificate, you might need to trust the certificate befor
 Otherwise you might not get it installed without a popup dialog or it will exit with error code -300.
 Just export the certificate to a folder and trust it. After the installation you can remove it again, the AddIn will work anyways.
 #### Trust certificate
-`certutil -addstore "Root" "path_to_cert"`  
+`certutil -addstore ROOT "path_to_cert"`  
 `certutil -addstore TRUSTEDPUBLISHER "path_to_cert"`  
 #### Remove trusted certificate
-`certutil -delstore "Root" "adamite.de"`  
+`certutil -delstore ROOT "adamite.de"`  
 `certutil -delstore TRUSTEDPUBLISHER "adamite.de"`  
