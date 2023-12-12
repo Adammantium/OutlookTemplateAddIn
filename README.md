@@ -40,3 +40,13 @@ Yes, just copy the folder structure to your users home folder and it will automa
 Because its in the AppData folder, it will make sure that users will have the templates available even when offline or not connected to a central storage server.
 ### Silent Install
 `"C:\Program Files\Common Files\microsoft shared\VSTO\10.0\VSTOInstaller.exe" /install OutlookTemplateAddIn.vsto /silent`
+### Certificate Issues
+As it's a self signed certificate, you might need to trust the certificate before installing it silently.
+Otherwise you might not get it installed without a popup dialog or it will exit with error code -300.
+Just export the certificate to a folder and trust it. After the installation you can remove it again, the AddIn will work anyways.
+#### Trust certificate
+`certutil -addstore "Root" "path_to_cert"`  
+`certutil -addstore TRUSTEDPUBLISHER "path_to_cert"`  
+#### Remove trusted certificate
+`certutil -delstore "Root" "adamite.de"`  
+`certutil -delstore TRUSTEDPUBLISHER "adamite.de"`  
